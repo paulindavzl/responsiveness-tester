@@ -6,10 +6,6 @@ Um site para testar a responsividade do seu site em diferentes telas
 ```bash
 $ git clone
 ```
-### Entre no diretório `src`
-```bash
-$ cd src
-```
 ### Instale as dependências
 ```bash
 $ pip install -r requirements.txt
