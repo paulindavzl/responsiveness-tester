@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Responsiveness Tester</title>
+        <link rel="stylesheet" href="../static/css/app.css">
+        <link href="https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Sedan:ital@0;1&display=swap" rel="stylesheet">
+        <link rel="icon" href="../static/img/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <!--Título, subtítulo e logo-->
+        <header>
+            <img class="logo-page" src="../static/img/logo.svg">
+            <label class="title-page">Responsiveness Tester</label>
+            <label class="subtitle-page">Teste a responsividade do seu site e veja como ele fica em diferentes telas</label>
+        </header>
+        
+        <!--Personalização formato da tela-->
+        <nav>
+            <label class="orientation-window-format">Escolha formato da tela</label>
+            
+            <!--Botões com as opções de escala-->
+            <div class="window-format-container">
+                <div class="fixed-options">
+                    <div class="first-options">
+                        <input class="option-window-format" id="mobile-format" type="radio" name="format" value="mobile" checked>
+                            <div>
+                                <label class="type-option">Celular</label>
+                                <img src="../static/img/mobile-format.svg" alt="Celular" id="mobile-img-option">
+                            </div>
+                        </input>
+                        <input class="option-window-format" id="ipad-format" type="radio" name="format" value="ipad">
+                            <div>
+                                <label class="type-options">IPad</label>
+                                <img src="../static/img/ipad-format.svg" alt="IPad" id="ipad-img-option">
+                            </div>
+                        </input>
+                    </div>
+                    <div class="second-options">
+                        <input class="option-window-format" id="computer-format" type="radio" name="format" value="computer">
+                            <div>
+                                <label class="type-options">Computador</label>
+                                <img src="../static/img/computer-format.svg" alt="PC" id="computer-img-option">
+                            </div>
+                        </input>
+                        <input class="option-window-format" id="custom-format" type="radio" name="format" value="custom">
+                            <div>
+                                <label class="type-options">Personalizado</label>
+                                <img src="../static/img/custom-format.svg" alt="Personalizado" id="custom-img-option">
+                            </div>
+                        </input>
+                    </div>
+                </div>
+                
+                <!--Escala personalizada-->
+                <div class="custom-scale-container">
+                    <label class="width-title">Largura (máx: 3200px)</label>
+                    <input class="custom-scale-input" id="custom-width" type="number" placeholder="Largura (px)" value="412"></input>
+                    <label class="height-title">Altura (máx: 3200px)</label>
+                    <input class="custom-scale-input" id="custom-height" type="number" placeholder="Altura (px)" value="915"></input>
+                </div>
+                <button id="apply">Aplicar</button>
+            </div>
+        </nav>
+        
+        <!--Simulador da tela-->
+        <main>
+            <div class="url-container">
+                <input id="url-site" type="text" placeholder="Link do seu site"></input>
+                <button class="search-url">Buscar</button>
+            </div>
+            <div id="window-simulator-container">
+                <iframe id="window-simulator" src="https://www.youtube.com/embed/"></iframe>
+            </div>
+            
+        </main>
+        
+        <!--créditos-->
+        <footer>
+            <label class="credits">Créditos:</label>
+            <label class="my-name">Paulo Chagas Chaves Silva</label>
+            <a href="https://github.com/paulindavzl"><img id="github" src="../static/img/github-logo.svg" alt="GitHub"></a>
+        </footer>
+    </body>
+    <script src="../static/js/index.js"></script>
+</html>
