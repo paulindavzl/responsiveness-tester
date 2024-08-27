@@ -6,10 +6,6 @@ Um site para testar a responsividade do seu site em diferentes telas
 ```bash
 $ git clone
 ```
-### Entre no diretório `src`
-```bash
-$ cd src
-```
 ### Instale as dependências
 ```bash
 $ pip install -r requirements.txt
@@ -29,7 +25,7 @@ $ flask run
 #### É importante que você defina a porta caso execute mais de um projeto para não entrarem em conflito na execução
 
 ## Acessar de forma online
-Você pode acessar este projeto pelo link abaixo:
+Você pode acessar este projeto de forma online pelo link abaixo:
 
 [![Site](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)]()
 
