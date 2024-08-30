@@ -1,0 +1,181 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Sedan", serif;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}
+
+#title {
+    font-size: 90px;
+    font-family: "New Amsterdam", sans-serif;
+}
+
+#subtitle {
+    font-size: 50px;
+}
+
+/* NAV */
+nav *{
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    left: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#nav-title {
+    font-size: 70px;
+}
+
+select {
+    width: 150px;
+    height: 40px;
+    border: 3px #000 solid;
+    border-radius: 20px;
+    margin: 5px;
+}
+
+input {
+    flex-basis: 100%;
+    width: 100px;
+    height: 50px;
+    border: 3px #000 solid;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+button {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+}
+
+#alter-red {
+    background-color: #f00;
+    border: 5px #f00 solid;
+}
+
+#alter-blue {
+    background-color: #00f;
+    border: 5px #00f solid;
+}
+
+#alter-green {
+    background-color: #0f0;
+    border: 5px #0f0 solid;
+}
+
+/* MAIN */
+main {
+    margin: 25px;
+    text-align: center;
+    padding: 5px;
+}
+
+main h1 {
+    font-size: 90px;
+}
+
+main label {
+    font-size: 40px;
+    margin: 10px;
+}
+
+img {
+    width: 400px;
+    height: 400px;
+    margin: 10px;
+    border-radius: 55px;
+    animation: float 1.0s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 8px);
+        box-shadow: 0 0 30px #f00;
+    }
+    100% {
+        transform: translate(0, -16px);
+    }
+}
+
+/* MOBILE */
+@media screen and (max-width: 599px) {
+    /* HEADER */
+    #title {
+        font-size: 32px;
+    }
+    
+    #subtitle {
+        font-size: 20px;
+    }
+    
+    /* NAV */
+    #nav-title {
+        font-size: 30px;
+    }
+    
+    /* MAIN */
+    main h1 {
+        font-size: 33px;
+    }
+    
+    img {
+        width: 80px;
+        height: 80px;
+        border-radius: 10px;
+    }
+    
+    main label {
+        font-size: 25px;
+        margin: 10px;
+    }
+}
+
+/* IPAD */
+@media screen and (min-width: 600px) and (max-width: 1194px) {
+    /* HEADER */
+    #title {
+        font-size: 70px;
+    }
+    
+    #subtitle {
+        font-size: 20px;
+    }
+    
+    /* NAV */
+    #nav-title {
+        font-size: 30px;
+    }
+    
+    /* MAIN */
+    main h1 {
+        font-size: 33px;
+    }
+    
+    img {
+        width: 80px;
+        height: 80px;
+        border-radius: 10px;
+    }
+    
+    main label {
+        font-size: 25px;
+        margin: 10px;
+    }
+}

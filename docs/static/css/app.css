@@ -5,8 +5,8 @@
 }
 
 body {
-    width: 3500px;
-    height: 3500px;
+    width: 100vw;
+    height: 100vh;
     padding: 10%;
 }
 
@@ -14,39 +14,63 @@ body {
 header {
     position: relative;
     left: 50%;
-    top: 10%;
     transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 1%;
-    width: 100%;
+    width: 750px;
+    text-align: center;
 }
 
 .logo-page {
-    width: 10%;
-    height: 10%;
+    width: 100px;
+    height: 100px;
     margin: 2%;
 }
 
 .title-page {
-    font-size: 450%;
+    font-size: 90px;
     font-family: "New Amsterdam", sans-serif;
 }
 
 .subtitle-page {
-    font-size: 380%;
+    font-size: 40px;
     font-family: "Sedan", serif;
 }
 
 /*NAV*/
+#menu-options {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: none;
+    transform: translateX(-90px);
+}
+
+#menu-options img {
+    width: 70px;
+    height: 70px;
+}
+
+.rotate {
+    animation: rotate-button 0.2s linear infinite;
+    pointer-events: none;
+}
+
 nav {
-    position: relative;
+    position: absolute;
     border: 8px #000 solid;
     border-radius: 20px;
     font-family: "New Amsterdam", sans-serif;
     padding: 10px;
-    width: 20%;
+    width: 600px;
+    height: 400px;
+    z-index: 1;
+    left: 5px;
+    transition: 0.5s ease;
+    background-color: #fff;
 }
 
 .window-format-container {
@@ -56,8 +80,7 @@ nav {
 }
 
 .option-window-format {
-    width: 25%;
-    scale: 50%;
+    scale: 60px;
 }
 
 .fixed-options {
@@ -68,22 +91,29 @@ nav {
 .first-options, .second-options {
     display: flex;
     flex-direction: row;
+    width: 600px;
 }
 
 img {
-    width: 20%;
+    width: 25%;
 }
 
 .custom-scale-container {
     display: grid;
+    padding: 5px;
 }
 
 .custom-scale-input {
-    width: 60%;
-    height: 100%;
+    width: 75%;
+    height: 120%;
     padding: 2px;
     border-radius: 5px;
     border: 3px #000 solid;
+    margin-bottom: 8px;
+}
+
+.width-title, .height-title {
+    margin-top: 8px;
 }
 
 #apply {
@@ -94,7 +124,7 @@ img {
     color: #fff;
     border-radius: 10px;
     left: 50%;
-    transform: translate(50%, 0)
+    transform: translateX(50%)
 }
 
 #apply:hover {
@@ -108,9 +138,8 @@ main {
     align-items: center;
     position: relative;
     left: 50%;
-    transform: translate(-50%, 0);
+    transform: translateX(-50%);
     margin: 8px;
-    margin-top: 10%;
 }
 
 .url-container {
@@ -142,25 +171,16 @@ main {
 #window-simulator-container {
     border: 5px #000 solid;
     border-radius: 20px;
+    transition: 0.5s ease-in;
+    top: 5px;
+    width: 100vw;
 }
 
 #window-simulator {
     width: 100%;
     height: 100%;
     border: none;
-}
-
-@keyframes hover-button {
-    0% {
-        width: 50%;
-        background-color: #fff;
-        color: #000;
-    }
-    100% {
-        width: 52%;
-        background-color: #fff;
-        color: #000;
-    }
+    border-radius: 10px;
 }
 
 /*FOOTER*/
@@ -183,7 +203,138 @@ footer label {
     font-size: 250%;
 }
 
+a {
+    width: 100px;
+}
+
 footer img {
-    width: 10%;
+    width: 100%;
     cursor: pointer;
 }
+
+/* KEYFRAMES */
+@keyframes hover-button {
+    0% {
+        width: 50%;
+        background-color: #fff;
+        color: #000;
+    }
+    100% {
+        width: 52%;
+        background-color: #fff;
+        color: #000;
+    }
+}
+
+@keyframes rotate-button {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 623px) {
+    /* HEADER */
+    header {
+        padding: 10%;
+        width: 500px;
+        top: 50px;
+    }
+    
+    .logo-page {
+        width: 70px;
+        height: 70px;
+        margin: 2%;
+    }
+    
+    .title-page {
+        font-size: 40px;
+        font-family: "New Amsterdam", sans-serif;
+    }
+    
+    .subtitle-page {
+        font-size: 15px;
+        font-family: "Sedan", serif;
+    }
+    
+    /* NAV */
+    #menu-options {
+        transform: translate(-15%, -400%);
+    }
+    
+    nav {
+        scale: 50%;
+        transform: translateY(-200px);
+    }
+    
+    /* MAIN */
+    .url-container {
+        scale: 50%;
+    }
+    
+    #url-site {
+        width: 400px;
+        height: 40px;
+        font-size: 120%;
+    }
+    
+    .search-url {
+        width: 170px;
+        height: 40px;
+        font-size: 120%;
+    }
+}
+
+@media screen and (min-width: 624px) and (max-width: 2000px) {
+    /* HEADER */
+    header {
+        padding: 10%;
+        width: 610px;
+        top: 70px;
+    }
+    
+    .logo-page {
+        width: 90px;
+        height: 90px;
+        margin: 2%;
+    }
+    
+    .title-page {
+        font-size: 60px;
+        font-family: "New Amsterdam", sans-serif;
+    }
+    
+    .subtitle-page {
+        font-size: 25px;
+        font-family: "Sedan", serif;
+    }
+    
+    /* NAV */
+    #menu-options {
+        transform: translate(-15%, -550%);
+    }
+    
+    nav {
+        scale: 70%;
+        transform: translateY(-200px);
+    }
+    
+    /* MAIN */
+    .url-container {
+        scale: 50%;
+    }
+    
+    #url-site {
+        width: 400px;
+        height: 40px;
+        font-size: 120%;
+    }
+    
+    .search-url {
+        width: 170px;
+        height: 40px;
+        font-size: 120%;
+    }
+};

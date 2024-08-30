@@ -1,3 +1,5 @@
+let statusOptions = "closed";
+
 window.onload = () => {
     alterWindowFormat();
 };
@@ -15,13 +17,72 @@ applyButton.onclick = () => {
     alterCustomValues();
 };
 
+// abre ou fecha as opções de escala
+const menuOptionsButton = document.querySelector("#menu-options img");
+menuOptionsButton.onclick = () => {
+    openCloseOptions();
+}
+
 // altera o formato da janela
 function alterWindowFormat() {
     const valuesScale = getWindowScale();
-    let windowContainer = document.querySelector("#window-simulator-container");
+    const windowContainer = document.querySelector("#window-simulator-container");
     
     windowContainer.style.width = `${valuesScale.width}px`;
     windowContainer.style.height = `${valuesScale.height}px`;
+};
+
+// dimensões de acordo com o dispositivo
+function getDimensions(device) {
+    const dimensions = {
+        "mobile": {
+            "width": "412",
+            "height": "915"
+        },
+        "ipad": {
+            "width": "834",
+            "height": "1194"
+        },
+        "computer": {
+            "width": "2560",
+            "height": "1440"
+        }
+    };
+    
+    resp = dimensions[device];
+    return resp;
+};
+
+// altera a escala do simulador de janela (celular e ipad)
+function alterScale(width) {
+    const windowWidth = window.innerWidth;
+    const windowContainer = document.querySelector("#window-simulator-container");
+    
+    if(windowWidth < 615) {
+        if(width < 615) {
+            windowContainer.style.scale = "100%";
+        }
+        else if(width > 630 && width < 188) {
+            windowContainer.style.scale = "50%";
+        }
+        else {
+            windowContainer.style.scale = "20%";
+        };
+    }
+    else if(windowWidth > 616 && windowWidth < 1800){
+        if(width < 615) {
+            windowContainer.style.scale = "100%";
+        }
+        else if(width > 630 && width < 2000) {
+            windowContainer.style.scale = "80%";
+        }
+        else {
+            windowContainer.style.scale = "20%";
+        };
+    }
+    else {
+        windowContainer.style.scale = "100%";
+    };
 };
 
 // obtém o formato da janela
@@ -33,26 +94,16 @@ function getWindowScale() {
             "height": "915"
         }
         const selected = option.value;
-        if(selected === "mobile") {
-            // resolução do Samsung Galaxy S21
-            values["width"] = "412";
-            values["height"] = "915";
-        }
-        else if(selected === "ipad") {
-            // resolução do IPad Pro 11 (1° e 2° Gen.)
-            values["width"] = "834";
-            values["height"] = "1194";
-        }
-        else if(selected === "computer") {
-            // resolução de um monitor Quad HD
-            values["width"] = "2560";
-            values["height"] = "1440";
+        if(selected !== "custom") {
+            values = getDimensions(selected);
         }
         else{
             const customValues = getCustomValues();
             values["width"] = customValues.width;
             values["height"] = customValues.height;
         };
+        
+        alterScale(parseInt(values.width));
         
         return values;
     };
@@ -103,3 +154,40 @@ function getURL() {
     
     return url;
 }
+
+// abre ou fecha o menu com opções de escala
+function openCloseOptions() {
+    const menuOptions = document.querySelector("nav");
+    
+    if(statusOptions === "closed") {
+        statusOptions = "opened";
+        animation(menuOptions, "entry");
+    }
+    else {
+        statusOptions = "closed";
+        animation(menuOptions, "exit");
+    };
+};
+
+// animação do menu de opções
+function animation(menuOptions, status) {
+    setTimeout(() => {
+        menuOptionsButton.classList.add("rotate");
+    }, 0);
+    setTimeout(() => {
+        menuOptionsButton.classList.remove("rotate");
+    }, 500);
+    
+    if(status === "exit") {
+        menuOptionsButton.src="https://paulindavzl.github.io/responsiveness-tester/static/img/open-options.svg";
+        menuOptions.style.opacity = "0%";
+        menuOptions.style.transform = "translateX(-100px)";
+        menuOptions.style.visibility = "hidden";
+    }
+    else {
+        menuOptionsButton.src="https://paulindavzl.github.io/responsiveness-tester/static/img/close-options.svg";
+        menuOptions.style.visibility = "visible";
+        menuOptions.style.opacity = "100%";
+        menuOptions.style.transform = "translateX(100px)";
+    };
+};
