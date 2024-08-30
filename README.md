@@ -27,7 +27,7 @@ $ flask run
 ## Acessar de forma online
 Você pode acessar este projeto de forma online pelo link abaixo:
 
-[![Site](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)]()
+[![Site](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://paulindavzl.github.io/responsiveness-tester/)
 
 É um link desse projeto hospedado em um servidor do `GitHub`!
 
